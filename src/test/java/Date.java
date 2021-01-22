@@ -1,4 +1,4 @@
-package correction.testing;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,11 +14,13 @@ public class Date {
 			
 		
 	}
-	public static boolean valideday (int month , int day, int year)
+	public static boolean valideday (int day , int month, int year)
 	{
-		if (day < 1)
+		if(!validemonth(month))
 			return false;
-		if (big.contains(month) && day >31)
+		else if (day < 1)
+			return false;
+		else if (big.contains(month) && day >31)
 			return false;
 		else if (small.contains(month) && day >30)
 			return false;
